@@ -1,25 +1,13 @@
+# AI Empathy Interviewer
 
-# Empathy Interviewer
+Adaptive empathy interviewer powered by the xAI API.
 
-A small Flask site that uses an OpenAI model as an adaptive empathy interviewer.
+Required environment variable:
+- `XAI_API_KEY`
 
-## Why this version is different
-It does **not** begin by asking for a problem or goal. It starts by understanding the person and follows what they choose to share. It only introduces AI after a meaningful goal, challenge, curiosity, aspiration, or process emerges naturally.
+Optional:
+- `XAI_MODEL` (defaults to `grok-4.7`)
 
-## Run locally
-
-1. Install dependencies:
-   `pip install flask openai`
-
-2. Set your OpenAI API key:
-   - macOS/Linux: `export OPENAI_API_KEY="..."`
-   - PowerShell: `$env:OPENAI_API_KEY="..."`
-
-3. Start the server:
-   `python app.py`
-
-4. Open:
-   `http://127.0.0.1:5000`
-
-## Privacy
-Conversation text is sent to the OpenAI API when running this app. Do not use sensitive information unless your deployment and account settings are appropriate for it.
+Render:
+- Build command: `pip install -r requirements.txt`
+- Start command: `gunicorn app:app`
